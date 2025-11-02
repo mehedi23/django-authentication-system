@@ -38,6 +38,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_LIBRARIES = [
     "rest_framework", 
+    "drf_spectacular",
 ]
 
 # Application definition
@@ -171,6 +172,8 @@ REST_FRAMEWORK = {
    'DEFAULT_AUTHENTICATION_CLASSES': [
        'rest_framework_simplejwt.authentication.JWTAuthentication', 
    ], 
+    # drf_spectacular for rest_framework
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 SIMPLE_JWT = {
