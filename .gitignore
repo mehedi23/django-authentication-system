@@ -58,11 +58,5 @@ dist/
 local_settings.py
   
 # ---- Django Migrations ----
-# Track migration .py files, but ignore cache/compiled files
-*/migrations/__pycache__/
-*/migrations/*.pyc
-*/migrations/*.pyo
-
-# Ignore Django migration files
-*/migrations/*.py
-!*/migrations/__init__.py  # keep __init__.py to recognize the folder as a package
+# Ignore all migrations folders completely
+**/migrations/

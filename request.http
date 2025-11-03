@@ -1,6 +1,5 @@
 ###
-POST http://127.0.0.1:8000/auth/users/login/
-Authorization: Bearer <your_access_token_here>
+POST http://127.0.0.1:8000/auth/users/login/ 
 Content-Type: application/json 
 
 {
@@ -21,5 +20,56 @@ Content-Type: application/json
 GET http://127.0.0.1:8000/auth/users/
   
 ###
+GET  http://127.0.0.1:8000/auth/users/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyNzQ4NzA4LCJpYXQiOjE3NjIxNDM5MDgsImp0aSI6IjE5NzE1NmI0MjBiMjRkNzZiYzE0Njg0ZjZiNzlmMGQ0IiwidXNlcm5hbWUiOiJhZG1pbiJ9.TuyJCzs7LZMiLxip-6oNZj3OSVmFzEIqMbxsZRUSVV4
+Content-Type: application/json 
+
+{ 
+    "first_name": "abcdfef", 
+}
+
+###
 GET http://127.0.0.1:8000/auth/users/me/
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyNjkzMDIxLCJpYXQiOjE3NjIwODgyMjEsImp0aSI6IjQ5NTM2MzQ0ODYxYzQ2OGE4ZTA2Yjg0MDUxNDhmYjA4IiwidXNlcm5hbWUiOiJhZG1pbiJ9.g-vPZOwNwc79sCN7xAyhfILqgo3Ez0AB1a8RUruyT10
+
+
+###
+PATCH    http://127.0.0.1:8000/auth/users/me/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyNzQ3NDk2LCJpYXQiOjE3NjIxNDI2OTYsImp0aSI6ImY0NmUyNzBlMWVhNDQyYTRhMzU1Y2E3M2Y5NmJmNjAwIiwidXNlcm5hbWUiOiJhZG1pbiJ9.zURQQtBEy8OOzh_SWBP7bwlS8azBVhmOWlAi3ZUBWOE
+Content-Type: application/json 
+
+{  
+  "first_name": "abcdfefxxdx1c cx cx"  
+}
+
+
+###
+PATCH  http://127.0.0.1:8000/auth/users/me/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyNjkzMDIxLCJpYXQiOjE3NjIwODgyMjEsImp0aSI6IjQ5NTM2MzQ0ODYxYzQ2OGE4ZTA2Yjg0MDUxNDhmYjA4IiwidXNlcm5hbWUiOiJhZG1pbiJ9.g-vPZOwNwc79sCN7xAyhfILqgo3Ez0AB1a8RUruyT10
+Content-Type: application/json 
+
+{  
+  "first_name": "abcdfefxcxdxc12 43"  
+}
+
+ 
+###
+PATCH http://127.0.0.1:8000/auth/users/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyNjkzMDIxLCJpYXQiOjE3NjIwODgyMjEsImp0aSI6IjQ5NTM2MzQ0ODYxYzQ2OGE4ZTA2Yjg0MDUxNDhmYjA4IiwidXNlcm5hbWUiOiJhZG1pbiJ9.g-vPZOwNwc79sCN7xAyhfILqgo3Ez0AB1a8RUruyT10
+Content-Type: application/json 
+
+{
+    "first_name": "abcdfef"
+}
+
+
+###
+POST http://127.0.0.1:8000/auth/users/register/
+Content-Type: application/json 
+
+{
+    "username":"admin4",
+    "first_name": "abcdfef",
+    "password":"123",
+    "email":"admin@gmail.com"
+}
