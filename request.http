@@ -34,3 +34,14 @@ Content-Type: application/json
 {  
   "first_name": " cx cx"  
 }
+
+
+###
+POST http://127.0.0.1:8000/auth/users/me/change-password/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyNzY1ODMxLCJpYXQiOjE3NjIxNjEwMzEsImp0aSI6ImFjY2RlOTU2NDg4ZjQ3N2M4Yzc5NjIwZDkwN2E1YjM4IiwidXNlcm5hbWUiOiJhZG1pbiJ9.kCOGJWmBQF_stf2fYIqiOwvn_zE3Ml8-n4CPTZwZBKk
+Content-Type: application/json 
+
+{  
+  "old_password": "123",  
+  "new_password": "123"  
+}
