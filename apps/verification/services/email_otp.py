@@ -3,7 +3,7 @@ from django.template.loader import render_to_string
 from django.utils import timezone
 from datetime import timedelta  
 import random 
-
+from apps.verification.tasks import send_email_task
 
 class OTPHandler: 
     otp_expiry_minutes = 10  
@@ -36,6 +36,20 @@ class OTPHandler:
         )
         email.content_subtype = "html"  
         email.send(fail_silently=False)
+    
+    def send_otp_use_celery(self, user, subject="Your OTP Code", template_name="otp_email.html", from_email="no-reply@example.com"):
+
+        otp = self.generate_otp()
+        self.model.objects.create(**{self.user_field: user,self.otp_field: otp,'is_verified': False})
+
+         # Use Celery to send email 
+        send_email_task.delay(
+            subject=subject,
+            template_name=template_name,
+            context={"user": user, "otp": otp},
+            from_email=from_email,
+            to_email=user.email
+        )
  
     def verify_otp(self, user, otp):
         try:

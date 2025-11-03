@@ -65,3 +65,6 @@ Content-Type: application/json
   "email": "anmamun0@gmail.com",  
   "otp": "642179"  
 }
+
+// Celery windows Run: celery -A core worker --loglevel=INFO -P solo  
+
