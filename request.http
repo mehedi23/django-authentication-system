@@ -14,3 +14,14 @@ Content-Type: application/json
 {
     "refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDY4NTMwNCwiaWF0IjoxNzYyMDkzMzA0LCJqdGkiOiI5NzRjN2IyZjNjZTU0MDNkYjc0NTU0Mjg4MjM5MDdjNyIsInVzZXJuYW1lIjoiYWRtaW4ifQ.-jYqYy7A25IzJtnp4rIpitHjnDs8b8Be8uL7QpZkzr0" 
 }
+ 
+###
+POST http://127.0.0.1:8000/auth/users/register/
+Content-Type: application/json 
+
+{
+    "username":"admin",
+    "first_name": "Nur mamun",
+    "password":"123",
+    "email":"admin@gmail.com"
+}
