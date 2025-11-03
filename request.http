@@ -25,3 +25,12 @@ Content-Type: application/json
     "password":"123",
     "email":"admin@gmail.com"
 }
+
+###
+GET http://127.0.0.1:8000/auth/users/me/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYyNzY1ODMxLCJpYXQiOjE3NjIxNjEwMzEsImp0aSI6ImFjY2RlOTU2NDg4ZjQ3N2M4Yzc5NjIwZDkwN2E1YjM4IiwidXNlcm5hbWUiOiJhZG1pbiJ9.kCOGJWmBQF_stf2fYIqiOwvn_zE3Ml8-n4CPTZwZBKk
+Content-Type: application/json 
+
+{  
+  "first_name": " cx cx"  
+}
