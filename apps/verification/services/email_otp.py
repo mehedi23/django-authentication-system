@@ -62,5 +62,10 @@ class OTPHandler:
 
         otp_obj.is_verified = True
         otp_obj.save()
+        
+        if hasattr(user, 'is_email_verify'): 
+            user.is_email_verify = True
+            user.save(update_fields=['is_email_verify'])
+
         return True, "OTP verified successfully"
 
