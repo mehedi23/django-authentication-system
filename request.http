@@ -20,10 +20,10 @@ POST http://127.0.0.1:8000/auth/users/register/
 Content-Type: application/json 
 
 {
-    "username":"admin",
+    "username":"admin10",
     "first_name": "Nur mamun",
     "password":"123",
-    "email":"admin@gmail.com"
+    "email":"anmamun0@gmail.com"
 }
 
 ###
@@ -45,3 +45,4 @@ Content-Type: application/json
   "old_password": "123",  
   "new_password": "123"  
 }
+ 

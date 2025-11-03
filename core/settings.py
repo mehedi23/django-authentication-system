@@ -38,6 +38,7 @@ ALLOWED_HOSTS = []
 
 CUSTOM_APPS = [
     'apps.users',
+    'apps.verification',
 ]
 
 INSTALLED_LIBRARIES = [
