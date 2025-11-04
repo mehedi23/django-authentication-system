@@ -86,4 +86,12 @@ Content-Type: application/json
   "otp": "714642" 
 }
 
- 
+###
+POST http://127.0.0.1:8000/auth/user/forgot-password/reset/
+Content-Type: application/json 
+
+{  
+  "email": "anmamun0@gmail.com",
+  "otp": "714642",
+  "new_password": "00a00@asdDED" 
+}

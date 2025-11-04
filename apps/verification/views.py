@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated,AllowAny
 from rest_framework import status
 from .serializers import ( EmailOTPCreateSerializer, EmailOTPVerifySerializer, 
-                          ForgotPasswordOTPRequestSerializer,ForgotPasswordOTPVerifySerializer )
+                          ForgotPasswordOTPRequestSerializer,ForgotPasswordOTPVerifySerializer,ResetPasswordSerializer )
 from .models import EmailOTP
 from apps.verification.services.email_otp import OTPHandler
 from apps.users.models import User
@@ -91,4 +91,26 @@ class ForgotPasswordVerifyOTPView(APIView):
 
         return Response({"detail": message}, status=200)
  
+# Reset Change Passwort
+class ResetPasswordView(APIView):
+    permission_classes = []
+    serializer_class = ResetPasswordSerializer
+
+    def post(self, request):
+        serializer = self.serializer_class(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        email = serializer.validated_data['email']
+        otp = serializer.validated_data['otp']
+        new_password = serializer.validated_data['new_password']
+
+        user = User.objects.get(email=email)
  
+        otp_obj = otp_handler.is_otp_verified(user)
+        if not otp_obj or otp_obj.otp != otp:
+            return Response({"detail": "OTP not verified or expired"}, status=400)
+
+        user.set_password(new_password)
+        user.save()
+
+        return Response({"detail": "Password reset successful"}, status=200)

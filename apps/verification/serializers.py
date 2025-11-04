@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import EmailOTP
-from apps.users.models import User 
+from apps.users.models import User
+from django.contrib.auth.password_validation import validate_password
 
 class EmailOTPCreateSerializer(serializers.Serializer):
     email = serializers.EmailField()
@@ -40,4 +41,14 @@ class ForgotPasswordOTPVerifySerializer(serializers.Serializer):
     email = serializers.EmailField()
     otp = serializers.CharField(max_length=6)
 
- 
+# Reset Change Passwort
+class ResetPasswordSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    otp = serializers.CharField(max_length=6)
+    new_password = serializers.CharField(write_only=True)
+
+    def validate_new_password(self, password):
+        validate_password(password)
+        return password
+
+

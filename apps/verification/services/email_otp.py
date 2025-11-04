@@ -69,3 +69,7 @@ class OTPHandler:
 
         return True, "OTP verified successfully"
 
+    def is_otp_verified(self, user):
+        return self.model.objects.filter(**{self.user_field: user},is_verified=True).order_by('-created_at').first()
+    
+    
