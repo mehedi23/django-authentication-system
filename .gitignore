@@ -14,7 +14,7 @@ env/
 
 # Environment variables
 .env
-*.env
+
 
 # SQLite database
 db.sqlite3
