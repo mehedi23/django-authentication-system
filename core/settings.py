@@ -183,6 +183,13 @@ REST_FRAMEWORK = {
    ], 
     # drf_spectacular for rest_framework
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_THROTTLE_CLASSES':[
+        'rest_framework.throttling.ScopedRateThrottle' # to limit requests from Specific view and endpoint  
+    ],
+    'DEFAULT_THROTTLE_RATES':{
+        'request_verify':'2/minute'
+    }
+
 }
 
 SIMPLE_JWT = {

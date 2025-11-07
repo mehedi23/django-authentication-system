@@ -8,14 +8,16 @@ from .serializers import ( EmailOTPCreateSerializer, EmailOTPVerifySerializer,
 from .models import EmailOTP
 from apps.verification.services.email_otp import OTPHandler
 from apps.users.models import User 
-
+from .throttles import RequstVerifyThrottle
 # Create your views here.
  
 otp_handler = OTPHandler(EmailOTP) 
 
 class SendOTPView(APIView):
     serializer_class = EmailOTPCreateSerializer 
-
+    throttle_classes = [RequstVerifyThrottle]
+    throttle_scope = 'request_verify'
+    
     def post(self, request):
         serializer = self.serializer_class(data=request.data,context={'request':request})
         serializer.is_valid(raise_exception=True)
