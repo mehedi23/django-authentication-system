@@ -205,11 +205,8 @@ CELERY_RESULT_BACKEND = os.getenv('CELERY_RESULT_BACKEND', 'redis://redis:6379/1
 CACHES = {
     "default": {
         # "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/1",
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient",
-        }
+        "BACKEND": "django_redis.cache.RedisCache", 
+        'LOCATION': 'redis://redis:6379/1', 
     }
 } 
 # pip install redis:  is the Python client for Redis. It allows Python to connect to a Redis server.
