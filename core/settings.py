@@ -39,6 +39,8 @@ ALLOWED_HOSTS = []
 CUSTOM_APPS = [
     'apps.users',
     'apps.verification',
+    'apps.inventory',
+    
 ]
 
 INSTALLED_LIBRARIES = [
