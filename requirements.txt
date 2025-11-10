@@ -27,6 +27,8 @@ kombu==5.5.4
 mypy_extensions==1.1.0
 mccabe==0.7.0
 mypy_extensions==1.1.0
+model-mommy==2.0.0
+model_bakery==1.20.5
 packaging==25.0
 prompt_toolkit==3.0.52
 psycopg2-binary==2.9.11 # psycopg2-binary
